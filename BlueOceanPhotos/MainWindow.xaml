@@ -32,6 +32,10 @@
                 <Separator/>
                 <MenuItem Header="Rotate Image.."/>
                 <Separator/>
+                <MenuItem Header="Zoom In"/>
+                <Separator/>
+                <MenuItem Header="Zoom Out"/>
+                <Separator/>
             </MenuItem>
             <MenuItem Header="View">
                 <Separator/>
