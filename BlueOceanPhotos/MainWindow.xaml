@@ -32,9 +32,9 @@
             </MenuItem>
             <MenuItem Header="Edit">
                 <Separator/>
-                <MenuItem Header="Crop Image.."/>
+                <MenuItem Header="Crop Image"/>
                 <Separator/>
-                <MenuItem Header="Rotate Image.."/>
+                <MenuItem Header="Rotate Image"/>
                 <Separator/>
                 <MenuItem Header="Zoom In"/>
                 <Separator/>
