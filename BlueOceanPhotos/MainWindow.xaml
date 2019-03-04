@@ -10,15 +10,23 @@
         WindowState="Maximized">
     
     <Window.Background>
-        <ImageBrush Opacity=".4">
+        <ImageBrush Opacity=".6">
             <ImageBrush.ImageSource>
                 <BitmapImage UriSource="Images/BlueOceanSplashScreen.jpg"/>
             </ImageBrush.ImageSource>
         </ImageBrush>
     </Window.Background>
     
-    <Grid>
-        
+    <Grid Opacity=".3">
+        <Menu>
+            <MenuItem Header="File">
+                <Separator/>
+                <MenuItem Header="Open Image"/>
+                <Separator/>
+                <MenuItem Header="Close Image"/>
+                <Separator/>
+            </MenuItem>
+        </Menu>
     </Grid>
     
 </Window>
