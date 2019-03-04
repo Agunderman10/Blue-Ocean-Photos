@@ -33,6 +33,15 @@
                 <MenuItem Header="Rotate Image.."/>
                 <Separator/>
             </MenuItem>
+            <MenuItem Header="View">
+                <Separator/>
+                <MenuItem Header="View Original Image"/>
+                <Separator/>
+                <MenuItem Header="View Fullscreen Image"/>
+                <Separator/>
+                <MenuItem Header="View Actual Size"/>
+                <Separator/>
+            </MenuItem>
         </Menu>
     </Grid>
     
