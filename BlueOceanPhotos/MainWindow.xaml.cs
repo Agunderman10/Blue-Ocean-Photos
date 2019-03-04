@@ -20,8 +20,11 @@ namespace BlueOceanPhotos
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainWindowViewModel _mainWindowViewModel = new MainWindowViewModel();
+
         public MainWindow()
         {
+            this.DataContext = _mainWindowViewModel;
             InitializeComponent();
         }
     }

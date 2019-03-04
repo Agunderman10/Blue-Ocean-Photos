@@ -1,6 +1,6 @@
 ﻿namespace BlueOceanPhotos
 {
-    class MainWindowViewModel
+    public class MainWindowViewModel
     {
 
     }
