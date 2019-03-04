@@ -8,6 +8,15 @@
         Title="MainWindow" 
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized">
+    
+    <Window.Background>
+        <ImageBrush Opacity=".4">
+            <ImageBrush.ImageSource>
+                <BitmapImage UriSource="Images/BlueOceanSplashScreen.jpg"/>
+            </ImageBrush.ImageSource>
+        </ImageBrush>
+    </Window.Background>
+    
     <Grid>
         
     </Grid>
