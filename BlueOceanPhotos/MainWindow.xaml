@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:BlueOceanPhotos"
         mc:Ignorable="d"
         Title="MainWindow" 
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
     <Grid>
         
     </Grid>
