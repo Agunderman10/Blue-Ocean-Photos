@@ -25,6 +25,10 @@
                 <Separator/>
                 <MenuItem Header="Close Image"/>
                 <Separator/>
+                <MenuItem Header="Rename.."/>
+                <Separator/>
+                <MenuItem Header="Recent Images"/>
+                <Separator/>
                 <MenuItem Header="Save"/>
                 <Separator/>
                 <MenuItem Header="Save As.."/>
