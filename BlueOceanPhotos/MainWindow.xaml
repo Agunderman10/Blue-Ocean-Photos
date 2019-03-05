@@ -23,7 +23,7 @@
                 <Separator/>
                 <MenuItem Header="New Image" Command="{Binding NewImage}"/>
                 <Separator/>
-                <MenuItem Header="Open Image"/>
+                <MenuItem Header="Open Image" Command="{Binding OpenImageCommand}"/>
                 <Separator/>
                 <MenuItem Header="Close Image"/>
                 <Separator/>
@@ -82,7 +82,7 @@
                     <StackPanel>
                         <TextBlock Text=" Editing Window" FontSize="12" Foreground="White"/>
                         <MenuItem Header="New Image" Foreground="White" Command="{Binding NewImage}"/>
-                        <MenuItem Header="Open Image" Foreground="White"/>
+                        <MenuItem Header="Open Image" Foreground="White" Command="{Binding OpenImageCommand}"/>
                         <MenuItem Header="Crop Image" Foreground="White"/>
                         <MenuItem Header="Rotate Image" Foreground="White"/>
                         <MenuItem Header="Zoom In" Foreground="White"/>

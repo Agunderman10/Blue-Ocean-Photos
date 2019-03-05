@@ -5,6 +5,7 @@
     using System.Threading;
     using System.Windows.Input;
     using System.Windows.Media.Imaging;
+    using System.Diagnostics;
 
     public class MainWindowViewModel : INotifyPropertyChanged
     {
@@ -36,6 +37,11 @@
             get { return new DelegateCommand(CreateNewImage); }
         }
 
+        public ICommand OpenImageCommand
+        {
+            get { return new DelegateCommand(OpenImage); }
+        }
+
         #endregion
         #region Private Methods
         //creates blank bitmap so user can draw on it
@@ -47,6 +53,13 @@
             _chosenImage.UriSource = blankUri;
             _chosenImage.EndInit();
             OnPropertyChanged(nameof(ChosenImage));
+        }
+
+        //opens file explorer so user can choose photo they want to open
+        private void OpenImage()
+        {
+            //open file explorer
+            Process.Start("explorer.exe");
         }
         #endregion
         #region INotifyPropertyChanged
