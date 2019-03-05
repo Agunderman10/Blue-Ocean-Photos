@@ -5,19 +5,23 @@
 
     public class MainWindowViewModel
     {
+        #region Constructors
         public MainWindowViewModel()
         {
             Thread.Sleep(3000);
         }
-
+        #endregion
+        #region Public Properties
         public ICommand NewImage
         {
             get { return new DelegateCommand(CreateNewImage); }
         }
-
-        public void CreateNewImage()
+        #endregion
+        #region Private Methods
+        private void CreateNewImage()
         {
 
         }
+        #endregion
     }
 }
