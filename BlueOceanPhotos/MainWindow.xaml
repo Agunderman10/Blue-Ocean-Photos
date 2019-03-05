@@ -17,17 +17,19 @@
         </ImageBrush>
     </Window.Background>
     
-    <Grid Opacity=".3">
+    <StackPanel Opacity=".3">
         <Menu>
             <MenuItem Header="File">
+                <Separator/>
+                <MenuItem Header="New Image"/>
                 <Separator/>
                 <MenuItem Header="Open Image"/>
                 <Separator/>
                 <MenuItem Header="Close Image"/>
                 <Separator/>
-                <MenuItem Header="Rename.."/>
-                <Separator/>
                 <MenuItem Header="Recent Images"/>
+                <Separator/>
+                <MenuItem Header="Rename.."/>
                 <Separator/>
                 <MenuItem Header="Save"/>
                 <Separator/>
@@ -55,6 +57,16 @@
                 <Separator/>
             </MenuItem>
         </Menu>
-    </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="click" Background="Gray"/>
+        </Grid>
+    </StackPanel>
     
 </Window>
