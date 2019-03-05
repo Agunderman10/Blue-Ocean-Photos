@@ -7,6 +7,11 @@
     {
         private Action _action;
 
+        public DelegateCommand(Action action)
+        {
+            this._action = action;
+        }
+
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
