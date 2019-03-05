@@ -6,6 +6,7 @@
     using System.Windows.Input;
     using System.Windows.Media.Imaging;
     using System.Diagnostics;
+    using System.Windows;
 
     public class MainWindowViewModel : INotifyPropertyChanged
     {
@@ -58,8 +59,15 @@
         //opens file explorer so user can choose photo they want to open
         private void OpenImage()
         {
-            //open file explorer
-            Process.Start("explorer.exe");
+            try
+            {
+                //open file explorer
+                Process.Start("explorer.exe");
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Could not open File Explorer.", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         #endregion
         #region INotifyPropertyChanged
