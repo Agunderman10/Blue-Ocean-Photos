@@ -12,6 +12,7 @@
         }
         #endregion
         #region Public Properties
+
         public ICommand NewImage
         {
             get { return new DelegateCommand(CreateNewImage); }
