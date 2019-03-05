@@ -35,6 +35,8 @@
                 <Separator/>
                 <MenuItem Header="Save As.."/>
                 <Separator/>
+                <MenuItem Header="Preferences"/>
+                <Separator/>
             </MenuItem>
             <MenuItem Header="Edit">
                 <Separator/>
