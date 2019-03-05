@@ -74,8 +74,12 @@
 
             <Image Source="Images/BlueOceanSplashScreen.jpg" Opacity="1" Margin="10" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
 
-            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="3" Grid.RowSpan="3" Margin="10">
-                <DockPanel Grid.Column="3" Grid.RowSpan="3"/>
+            <Border BorderBrush="White" BorderThickness="2" Grid.Column="3" Grid.RowSpan="3" Margin="10">
+                <DockPanel Grid.Column="3" Grid.RowSpan="3">
+                    <StackPanel>
+                        <TextBlock Text=" Photo Editor" FontSize="10" Foreground="White"/>
+                    </StackPanel>
+                </DockPanel>
             </Border>
         </Grid>
     </StackPanel>
