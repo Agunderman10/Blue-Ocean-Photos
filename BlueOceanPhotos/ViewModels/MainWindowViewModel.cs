@@ -66,7 +66,9 @@
             }
             catch(Exception)
             {
+                //if there's an issue opening the file and we catch an exception, show message
                 MessageBox.Show("Could not open File Explorer.", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
         }
         #endregion
