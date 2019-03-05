@@ -63,9 +63,16 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-            <Image Source="Images/BlueOceanSplashScreen.jpg" Opacity="1" Grid.ColumnSpan="2"/>
+            <Image Source="Images/BlueOceanSplashScreen.jpg" Opacity="1" Margin="10" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
         </Grid>
     </StackPanel>
     
