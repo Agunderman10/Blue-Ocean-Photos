@@ -15,11 +15,6 @@
         public MainWindowViewModel()
         {
             Thread.Sleep(3000);
-            Uri uri = new Uri("Images/BlueOceanSplashScreen.jpg", UriKind.Relative);
-            _chosenImage = new BitmapImage();
-            _chosenImage.BeginInit();
-            _chosenImage.UriSource = uri;
-            _chosenImage.EndInit();
         }
         #endregion
         #region Public Properties
