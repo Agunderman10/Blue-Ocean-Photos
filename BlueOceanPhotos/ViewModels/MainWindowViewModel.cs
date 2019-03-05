@@ -32,9 +32,9 @@
             }
         }
 
-        public ICommand NewImage
+        public ICommand NewImageCommand
         {
-            get { return new DelegateCommand(CreateNewImage); }
+            get { return new DelegateCommand(NewImage); }
         }
 
         public ICommand OpenImageCommand
@@ -45,7 +45,7 @@
         #endregion
         #region Private Methods
         //creates blank bitmap so user can draw on it
-        private void CreateNewImage()
+        private void NewImage()
         {
             _chosenImage = new BitmapImage();
             Uri blankUri = new Uri("Images/EmptyImage.png", UriKind.Relative);
