@@ -1,8 +1,8 @@
-﻿using System;
-using System.Windows.Input;
-
-namespace BlueOceanPhotos
+﻿namespace BlueOceanPhotos
 {
+    using System;
+    using System.Windows.Input;
+
     public class DelegateCommand : ICommand
     {
         private Action _action;
