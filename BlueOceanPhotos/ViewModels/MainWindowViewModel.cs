@@ -5,6 +5,9 @@
 
     public class MainWindowViewModel
     {
+        #region Private Members
+
+        #endregion
         #region Constructors
         public MainWindowViewModel()
         {
