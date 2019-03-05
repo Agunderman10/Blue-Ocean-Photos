@@ -1,5 +1,6 @@
 ﻿namespace BlueOceanPhotos
 {
+    using System;
     using System.ComponentModel;
     using System.Threading;
     using System.Windows.Input;
@@ -14,6 +15,11 @@
         public MainWindowViewModel()
         {
             Thread.Sleep(3000);
+            Uri uri = new Uri("Images/BlueOceanSplashScreen.jpg", UriKind.Relative);
+            _chosenImage = new BitmapImage();
+            _chosenImage.BeginInit();
+            _chosenImage.UriSource = uri;
+            _chosenImage.EndInit();
         }
         #endregion
         #region Public Properties
@@ -38,14 +44,19 @@
         #region Private Methods
         private void CreateNewImage()
         {
-            
+            _chosenImage = new BitmapImage();
+            Uri blankUri = new Uri("Images/EmptyImage.png", UriKind.Relative);
+            _chosenImage.BeginInit();
+            _chosenImage.UriSource = blankUri;
+            _chosenImage.EndInit();
+            OnPropertyChanged(nameof(ChosenImage));
         }
         #endregion
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(propertyName)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
     }

@@ -21,7 +21,7 @@
         <Menu>
             <MenuItem Header="File">
                 <Separator/>
-                <MenuItem Header="New Image" Command="{Binding CreateNewImage}"/>
+                <MenuItem Header="New Image" Command="{Binding NewImage}"/>
                 <Separator/>
                 <MenuItem Header="Open Image"/>
                 <Separator/>
@@ -81,7 +81,7 @@
                 <DockPanel Grid.Column="3" Grid.RowSpan="3">
                     <StackPanel>
                         <TextBlock Text=" Editing Window" FontSize="12" Foreground="White"/>
-                        <MenuItem Header="New Image" Foreground="White" Command="{Binding CreateNewImage}"/>
+                        <MenuItem Header="New Image" Foreground="White" Command="{Binding NewImage}"/>
                         <MenuItem Header="Open Image" Foreground="White"/>
                         <MenuItem Header="Crop Image" Foreground="White"/>
                         <MenuItem Header="Rotate Image" Foreground="White"/>
