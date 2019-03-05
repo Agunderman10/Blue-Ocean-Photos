@@ -1,10 +1,11 @@
 ﻿namespace BlueOceanPhotos
 {
+    using System.ComponentModel;
     using System.Threading;
     using System.Windows.Input;
     using System.Windows.Media.Imaging;
 
-    public class MainWindowViewModel
+    public class MainWindowViewModel : INotifyPropertyChanged
     {
         #region Private Members
         private BitmapImage _chosenImage;
@@ -32,11 +33,19 @@
         {
             get { return new DelegateCommand(CreateNewImage); }
         }
+
         #endregion
         #region Private Methods
         private void CreateNewImage()
         {
             
+        }
+        #endregion
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(propertyName)));
         }
         #endregion
     }
