@@ -14,6 +14,7 @@
         #region Constructors
         public MainWindowViewModel()
         {
+            //sleep for 3 seconds so we show splash screen
             Thread.Sleep(3000);
         }
         #endregion
@@ -37,6 +38,7 @@
 
         #endregion
         #region Private Methods
+        //creates blank bitmap so user can draw on it
         private void CreateNewImage()
         {
             _chosenImage = new BitmapImage();
