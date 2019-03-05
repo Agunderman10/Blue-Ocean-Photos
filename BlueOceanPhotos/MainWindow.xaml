@@ -78,6 +78,8 @@
                 <DockPanel Grid.Column="3" Grid.RowSpan="3">
                     <StackPanel>
                         <TextBlock Text=" Editing Window" FontSize="12" Foreground="White"/>
+                        <MenuItem Header="New Image" Foreground="White"/>
+                        <MenuItem Header="Open Image" Foreground="White"/>
                         <MenuItem Header="Crop Image" Foreground="White"/>
                         <MenuItem Header="Rotate Image" Foreground="White"/>
                         <MenuItem Header="Zoom In" Foreground="White"/>
