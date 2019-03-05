@@ -79,6 +79,13 @@
                     <StackPanel>
                         <TextBlock Text=" Editing Window" FontSize="12" Foreground="White"/>
                         <MenuItem Header="Crop Image" Foreground="White"/>
+                        <MenuItem Header="Rotate Image" Foreground="White"/>
+                        <MenuItem Header="Zoom In" Foreground="White"/>
+                        <MenuItem Header="Zoom Out" Foreground="White"/>
+                        <MenuItem Header="View Fullscreen" Foreground="White"/>
+                        <MenuItem Header="Rename" Foreground="White"/>
+                        <MenuItem Header="Save" Foreground="White"/>
+                        <MenuItem Header="Save As.." Foreground="White"/>
                     </StackPanel>
                 </DockPanel>
             </Border>
