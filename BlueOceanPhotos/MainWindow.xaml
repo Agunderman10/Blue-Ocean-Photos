@@ -78,6 +78,7 @@
                 <DockPanel Grid.Column="3" Grid.RowSpan="3">
                     <StackPanel>
                         <TextBlock Text=" Photo Editor" FontSize="10" Foreground="White"/>
+                        <MenuItem Header="Crop Image" Foreground="White"/>
                     </StackPanel>
                 </DockPanel>
             </Border>
