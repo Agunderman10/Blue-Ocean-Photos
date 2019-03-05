@@ -36,7 +36,7 @@
         #region Private Methods
         private void CreateNewImage()
         {
-
+            
         }
         #endregion
     }
