@@ -14,7 +14,7 @@
         #region Constructors
         public MainWindowViewModel()
         {
-            //sleep for 3 seconds so we show splash screen
+            //sleep for 3 seconds so we can show splash screen
             Thread.Sleep(3000);
         }
         #endregion
