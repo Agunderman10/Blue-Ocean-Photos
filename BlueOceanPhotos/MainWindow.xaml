@@ -91,6 +91,7 @@
                         <MenuItem Header="Rotate Image" Foreground="White" Command="{Binding RotateImageCommand}"/>
                         <MenuItem Header="Zoom In" Foreground="White"/>
                         <MenuItem Header="Zoom Out" Foreground="White"/>
+                        <MenuItem Header="View Original" Foreground="White"/>
                         <MenuItem Header="View Fullscreen" Foreground="White"/>
                         <MenuItem Header="Rename" Foreground="White"/>
                         <MenuItem Header="Save" Foreground="White" Command="{Binding SaveImageCommand}"/>
