@@ -93,6 +93,9 @@
             //set filename property to untitled.png so we can display the image name
             FileName = "Untitled.png";
 
+            //reset rotations because we are getting a new image so we don't need to keep track of old image's rotations
+            rotations = 0;
+
             //update UI
             OnPropertyChanged(nameof(ChosenImage));
             OnPropertyChanged(nameof(FileName));
@@ -124,6 +127,9 @@
 
                     //set FileName property to the new image's name so we can display it, get ONLY the name, not full path
                     FileName = Path.GetFileName(openFileDialog.FileName);
+
+                    //reset rotations because we are getting a new image so we don't need to keep track of old image's rotations
+                    rotations = 0;
 
                     //update UI
                     OnPropertyChanged(nameof(FileName));
@@ -191,7 +197,13 @@
         //close whatever image is currently open, basically just set it to null
         private void CloseImage()
         {
+            //set image to null so it doesn't show in the UI anymore
             ChosenImage = null;
+
+            //reset rotations because we are closing our image so we don't need to keep track of its rotations
+            rotations = 0;
+
+            //update UI
             OnPropertyChanged(nameof(ChosenImage));
         }
 
