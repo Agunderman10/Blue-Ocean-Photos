@@ -7,6 +7,7 @@
     using System.Windows.Media.Imaging;
     using System.Windows;
     using Microsoft.Win32;
+    using System.IO;
 
     public class MainWindowViewModel : INotifyPropertyChanged
     {
@@ -53,6 +54,11 @@
         public ICommand CloseImageCommand
         {
             get { return new DelegateCommand(CloseImage); }
+        }
+
+        public ICommand SaveImageCommand
+        {
+            get { return new DelegateCommand(SaveImage); }
         }
 
         #endregion
@@ -154,6 +160,17 @@
         {
             ChosenImage = null;
             OnPropertyChanged(nameof(ChosenImage));
+        }
+
+        //save current image
+        private void SaveImage()
+        {
+            using(FileStream stream = new FileStream("Untitled.png", FileMode.Create))
+            {
+                PngBitmapEncoder encoder = new PngBitmapEncoder();
+                encoder.Frames.Add(BitmapFrame.Create(ChosenImage));
+                encoder.Save(stream);
+            }
         }
         #endregion
         #region INotifyPropertyChanged

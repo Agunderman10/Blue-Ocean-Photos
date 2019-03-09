@@ -31,7 +31,7 @@
                 <Separator/>
                 <MenuItem Header="Rename.."/>
                 <Separator/>
-                <MenuItem Header="Save"/>
+                <MenuItem Header="Save" Command="{Binding SaveImageCommand}"/>
                 <Separator/>
                 <MenuItem Header="Save As.."/>
                 <Separator/>
@@ -90,7 +90,7 @@
                         <MenuItem Header="Zoom Out" Foreground="White"/>
                         <MenuItem Header="View Fullscreen" Foreground="White"/>
                         <MenuItem Header="Rename" Foreground="White"/>
-                        <MenuItem Header="Save" Foreground="White"/>
+                        <MenuItem Header="Save" Foreground="White" Command="{Binding SaveImageCommand}"/>
                         <MenuItem Header="Save As.." Foreground="White"/>
                         <MenuItem Header="Share With.." Foreground="White"/>
                     </StackPanel>
