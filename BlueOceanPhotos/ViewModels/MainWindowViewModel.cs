@@ -168,7 +168,7 @@
             //create filestream object to hold the bitmap
             using(FileStream stream = new FileStream("Untitled.png", FileMode.Create))
             {
-                //create a PngBitmapEncoder to write the object
+                //create a PngBitmapEncoder object
                 PngBitmapEncoder encoder = new PngBitmapEncoder();
 
                 //add bitmapframe to the encoder's frames collection
