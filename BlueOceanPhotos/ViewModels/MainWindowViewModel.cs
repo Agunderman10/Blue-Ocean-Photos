@@ -59,17 +59,7 @@
         //opens file explorer so user can choose photo they want to open
         private void OpenImage()
         {
-            try
-            {
-                //open file explorer
-                Process.Start("explorer.exe");
-            }
-            catch(Exception)
-            {
-                //if there's an issue opening the file and we catch an exception, show message
-                MessageBox.Show("Could not open File Explorer.", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
+            
         }
         #endregion
         #region INotifyPropertyChanged
