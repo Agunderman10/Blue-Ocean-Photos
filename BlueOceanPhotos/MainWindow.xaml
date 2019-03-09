@@ -83,6 +83,7 @@
                         <TextBlock Text=" Editing Window" FontSize="12" Foreground="White"/>
                         <MenuItem Header="New Image" Foreground="White" Command="{Binding NewImageCommand}"/>
                         <MenuItem Header="Open Image" Foreground="White" Command="{Binding OpenImageCommand}"/>
+                        <MenuItem Header="Close Image" Foreground="White"/>
                         <MenuItem Header="Crop Image" Foreground="White"/>
                         <MenuItem Header="Rotate Image" Foreground="White"/>
                         <MenuItem Header="Zoom In" Foreground="White"/>
