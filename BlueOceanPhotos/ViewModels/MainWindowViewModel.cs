@@ -59,27 +59,29 @@
         //opens file explorer so user can choose photo they want to open
         private void OpenImage()
         {
-            //open the file explorer so user can choose the photo they want to open
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Select an image";
-            openFileDialog.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
-              "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
-              "Portable Network Graphic (*.png)|*.png";
+            try
+            {
+                //open the file explorer so user can choose the photo they want to open
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Title = "Select an image";
+                openFileDialog.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+                  "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+                  "Portable Network Graphic (*.png)|*.png";
 
-            //if we can open the image, open it in our application
-            if (openFileDialog.ShowDialog() == true)
-            {
-                ChosenImage = new BitmapImage();
-                Uri openedImageUri = new Uri(openFileDialog.FileName);
-                ChosenImage.BeginInit();
-                ChosenImage.UriSource = openedImageUri;
-                ChosenImage.EndInit();
-                OnPropertyChanged(nameof(ChosenImage));
+                //if we can open the image, open it in our application
+                if (openFileDialog.ShowDialog() == true)
+                {
+                    ChosenImage = new BitmapImage();
+                    Uri openedImageUri = new Uri(openFileDialog.FileName);
+                    ChosenImage.BeginInit();
+                    ChosenImage.UriSource = openedImageUri;
+                    ChosenImage.EndInit();
+                    OnPropertyChanged(nameof(ChosenImage));
+                }
             }
-            else
+            catch(Exception)
             {
-                //show error message if we can't open image
-                MessageBox.Show("Error importing photo!", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Error importing image!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         #endregion
