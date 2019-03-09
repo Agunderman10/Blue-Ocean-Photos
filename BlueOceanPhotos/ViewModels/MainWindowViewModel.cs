@@ -14,6 +14,7 @@
         #region Private Members
         private BitmapImage _chosenImage;
         private Uri _chosenImageUri;
+        private string _fileName;
         private int rotations = 0;
         #endregion
         #region Constructors
@@ -32,6 +33,20 @@
                 if(this._chosenImage != value)
                 {
                     this._chosenImage = value;
+                    OnPropertyChanged(nameof(ChosenImage));
+                }
+            }
+        }
+
+        public string FileName
+        {
+            get { return this._fileName; }
+            set
+            {
+                if(this._fileName != value)
+                {
+                    this._fileName = value;
+                    OnPropertyChanged(nameof(FileName));
                 }
             }
         }
@@ -66,12 +81,21 @@
         //creates blank bitmap so user can draw on it
         private void NewImage()
         {
+            //create new objects we will set the ChosenImage equal to
             _chosenImage = new BitmapImage();
-            _chosenImageUri = new Uri("Images/EmptyImage.png", UriKind.Relative);
+            _chosenImageUri = new Uri("Images/Untitled.png", UriKind.Relative);
+
+            //set new UriSource to our new image we created above
             _chosenImage.BeginInit();
             _chosenImage.UriSource = _chosenImageUri;
             _chosenImage.EndInit();
+
+            //set filename property to untitled.png so we can display the image name
+            FileName = "Untitled.png";
+
+            //update UI
             OnPropertyChanged(nameof(ChosenImage));
+            OnPropertyChanged(nameof(FileName));
         }
 
         //opens file explorer so user can choose photo they want to open
@@ -89,11 +113,20 @@
                 //if we can open the image, open it in our application
                 if (openFileDialog.ShowDialog() == true)
                 {
+                    //create new objects we will use for the new image
                     ChosenImage = new BitmapImage();
                     _chosenImageUri = new Uri(openFileDialog.FileName);
+
+                    //set new UriSource to objects we created above
                     ChosenImage.BeginInit();
                     ChosenImage.UriSource = _chosenImageUri;
                     ChosenImage.EndInit();
+
+                    //set FileName property to the new image's name so we can display it, get ONLY the name, not full path
+                    FileName = Path.GetFileName(openFileDialog.FileName);
+
+                    //update UI
+                    OnPropertyChanged(nameof(FileName));
                     OnPropertyChanged(nameof(ChosenImage));
                 }
             }

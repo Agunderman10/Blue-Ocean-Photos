@@ -100,7 +100,7 @@
     <SplashScreen Include="Images\BlueOceanSplashScreen.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\EmptyImage.png" />
+    <Resource Include="Images\Untitled.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
