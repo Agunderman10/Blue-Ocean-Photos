@@ -165,10 +165,16 @@
         //save current image
         private void SaveImage()
         {
+            //create filestream object to hold the bitmap
             using(FileStream stream = new FileStream("Untitled.png", FileMode.Create))
             {
+                //create a PngBitmapEncoder to write the object
                 PngBitmapEncoder encoder = new PngBitmapEncoder();
+
+                //add bitmapframe to the encoder's frames collection
                 encoder.Frames.Add(BitmapFrame.Create(ChosenImage));
+
+                //save encoder's data into file stream
                 encoder.Save(stream);
             }
         }
