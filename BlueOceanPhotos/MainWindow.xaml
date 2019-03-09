@@ -42,7 +42,7 @@
                 <Separator/>
                 <MenuItem Header="Crop Image"/>
                 <Separator/>
-                <MenuItem Header="Rotate Image"/>
+                <MenuItem Header="Rotate Image" Command="{Binding RotateImageCommand}"/>
                 <Separator/>
                 <MenuItem Header="Zoom In"/>
                 <Separator/>
@@ -85,7 +85,7 @@
                         <MenuItem Header="Open Image" Foreground="White" Command="{Binding OpenImageCommand}"/>
                         <MenuItem Header="Close Image" Foreground="White"/>
                         <MenuItem Header="Crop Image" Foreground="White"/>
-                        <MenuItem Header="Rotate Image" Foreground="White"/>
+                        <MenuItem Header="Rotate Image" Foreground="White" Command="{Binding RotateImageCommand}"/>
                         <MenuItem Header="Zoom In" Foreground="White"/>
                         <MenuItem Header="Zoom Out" Foreground="White"/>
                         <MenuItem Header="View Fullscreen" Foreground="White"/>

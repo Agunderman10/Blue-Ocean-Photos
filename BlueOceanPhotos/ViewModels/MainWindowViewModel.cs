@@ -12,6 +12,8 @@
     {
         #region Private Members
         private BitmapImage _chosenImage;
+        private Uri _chosenImageUri;
+        private int rotations = 0;
         #endregion
         #region Constructors
         public MainWindowViewModel()
@@ -43,15 +45,20 @@
             get { return new DelegateCommand(OpenImage); }
         }
 
+        public ICommand RotateImageCommand
+        {
+            get { return new DelegateCommand(RotateImage); }
+        }
+
         #endregion
         #region Private Methods
         //creates blank bitmap so user can draw on it
         private void NewImage()
         {
             _chosenImage = new BitmapImage();
-            Uri blankUri = new Uri("Images/EmptyImage.png", UriKind.Relative);
+            _chosenImageUri = new Uri("Images/EmptyImage.png", UriKind.Relative);
             _chosenImage.BeginInit();
-            _chosenImage.UriSource = blankUri;
+            _chosenImage.UriSource = _chosenImageUri;
             _chosenImage.EndInit();
             OnPropertyChanged(nameof(ChosenImage));
         }
@@ -72,9 +79,9 @@
                 if (openFileDialog.ShowDialog() == true)
                 {
                     ChosenImage = new BitmapImage();
-                    Uri openedImageUri = new Uri(openFileDialog.FileName);
+                    _chosenImageUri = new Uri(openFileDialog.FileName);
                     ChosenImage.BeginInit();
-                    ChosenImage.UriSource = openedImageUri;
+                    ChosenImage.UriSource = _chosenImageUri;
                     ChosenImage.EndInit();
                     OnPropertyChanged(nameof(ChosenImage));
                 }
@@ -83,6 +90,58 @@
             {
                 MessageBox.Show("Error importing image!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void RotateImage()
+        {
+            //add one so we know we're on the next rotation
+            rotations++;
+
+            //keep track of what rotation we're on
+            if (rotations == 5)
+            {
+                rotations = 1;
+            }
+
+            //switch through rotations
+            switch (rotations)
+            {
+                //rotate 90 degrees
+                case 1:
+                    _chosenImage = new BitmapImage();
+                    _chosenImage.BeginInit();
+                    _chosenImage.Rotation = Rotation.Rotate90;
+                    _chosenImage.UriSource = _chosenImageUri;
+                    _chosenImage.EndInit();
+                    break;
+                //rotate 180 degrees
+                case 2:
+                    _chosenImage = new BitmapImage();
+                    _chosenImage.BeginInit();
+                    _chosenImage.Rotation = Rotation.Rotate180;
+                    _chosenImage.UriSource = _chosenImageUri;
+                    _chosenImage.EndInit();
+                    break;
+                //rotate 270 degrees
+                case 3:
+                    _chosenImage = new BitmapImage();
+                    _chosenImage.BeginInit();
+                    _chosenImage.Rotation = Rotation.Rotate270;
+                    _chosenImage.UriSource = _chosenImageUri;
+                    _chosenImage.EndInit();
+                    break;
+                //rotate back to 0 degrees
+                case 4:
+                    _chosenImage = new BitmapImage();
+                    _chosenImage.BeginInit();
+                    _chosenImage.Rotation = Rotation.Rotate0;
+                    _chosenImage.UriSource = _chosenImageUri;
+                    _chosenImage.EndInit();
+                    break;
+            }
+
+            //update UI
+            OnPropertyChanged(nameof(ChosenImage));
         }
         #endregion
         #region INotifyPropertyChanged
