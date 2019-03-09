@@ -50,6 +50,11 @@
             get { return new DelegateCommand(RotateImage); }
         }
 
+        public ICommand CloseImageCommand
+        {
+            get { return new DelegateCommand(CloseImage); }
+        }
+
         #endregion
         #region Private Methods
         //creates blank bitmap so user can draw on it
@@ -141,6 +146,13 @@
             }
 
             //update UI
+            OnPropertyChanged(nameof(ChosenImage));
+        }
+
+        //close whatever image is currently open, basically just set it to null
+        private void CloseImage()
+        {
+            ChosenImage = null;
             OnPropertyChanged(nameof(ChosenImage));
         }
         #endregion

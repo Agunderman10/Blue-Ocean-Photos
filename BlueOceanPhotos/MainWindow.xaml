@@ -25,7 +25,7 @@
                 <Separator/>
                 <MenuItem Header="Open Image" Command="{Binding OpenImageCommand}"/>
                 <Separator/>
-                <MenuItem Header="Close Image"/>
+                <MenuItem Header="Close Image" Command="{Binding CloseImageCommand}"/>
                 <Separator/>
                 <MenuItem Header="Recent Images"/>
                 <Separator/>
@@ -83,7 +83,7 @@
                         <TextBlock Text=" Editing Window" FontSize="12" Foreground="White"/>
                         <MenuItem Header="New Image" Foreground="White" Command="{Binding NewImageCommand}"/>
                         <MenuItem Header="Open Image" Foreground="White" Command="{Binding OpenImageCommand}"/>
-                        <MenuItem Header="Close Image" Foreground="White"/>
+                        <MenuItem Header="Close Image" Foreground="White" Command="{Binding CloseImageCommand}"/>
                         <MenuItem Header="Crop Image" Foreground="White"/>
                         <MenuItem Header="Rotate Image" Foreground="White" Command="{Binding RotateImageCommand}"/>
                         <MenuItem Header="Zoom In" Foreground="White"/>
