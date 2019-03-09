@@ -62,7 +62,7 @@
         {
             //open the file explorer so user can choose the photo they want to open
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Select a picture";
+            openFileDialog.Title = "Select an image";
             openFileDialog.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
               "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
               "Portable Network Graphic (*.png)|*.png";
