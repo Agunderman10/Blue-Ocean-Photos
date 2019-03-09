@@ -5,7 +5,6 @@
     using System.Threading;
     using System.Windows.Input;
     using System.Windows.Media.Imaging;
-    using System.Diagnostics;
     using System.Windows;
     using Microsoft.Win32;
 
