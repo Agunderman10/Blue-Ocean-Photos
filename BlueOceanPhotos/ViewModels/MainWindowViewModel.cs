@@ -200,11 +200,15 @@
             //set image to null so it doesn't show in the UI anymore
             ChosenImage = null;
 
+            //set FileName to null so it's not displayed anymore
+            FileName = null;
+
             //reset rotations because we are closing our image so we don't need to keep track of its rotations
             rotations = 0;
 
             //update UI
             OnPropertyChanged(nameof(ChosenImage));
+            OnPropertyChanged(nameof(FileName));
         }
 
         //save current image
