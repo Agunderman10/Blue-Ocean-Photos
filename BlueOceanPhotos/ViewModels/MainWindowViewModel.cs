@@ -156,7 +156,7 @@
             //switch through rotations
             switch (rotations)
             {
-                //rotate 90 degrees
+                //rotate to 90 degrees
                 case 1:
                     _chosenImage = new BitmapImage();
                     _chosenImage.BeginInit();
@@ -164,7 +164,7 @@
                     _chosenImage.UriSource = _chosenImageUri;
                     _chosenImage.EndInit();
                     break;
-                //rotate 180 degrees
+                //rotate to 180 degrees
                 case 2:
                     _chosenImage = new BitmapImage();
                     _chosenImage.BeginInit();
@@ -172,7 +172,7 @@
                     _chosenImage.UriSource = _chosenImageUri;
                     _chosenImage.EndInit();
                     break;
-                //rotate 270 degrees
+                //rotate to 270 degrees
                 case 3:
                     _chosenImage = new BitmapImage();
                     _chosenImage.BeginInit();
