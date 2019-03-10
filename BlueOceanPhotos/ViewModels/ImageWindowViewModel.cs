@@ -4,21 +4,21 @@
 
     public class ImageWindowViewModel
     {
-        private BitmapImage _chosenImage;
+        private BitmapImage _originalImage;
 
-        public ImageWindowViewModel(BitmapImage chosenImage)
+        public ImageWindowViewModel(BitmapImage originalImage)
         {
-            this._chosenImage = chosenImage;
+            this._originalImage = originalImage;
         }
 
-        public BitmapImage ChosenImage
+        public BitmapImage OriginalImage
         {
-            get { return this._chosenImage; }
+            get { return this._originalImage; }
             set
             {
-                if(this._chosenImage != value)
+                if(this._originalImage != value)
                 {
-                    this._chosenImage = value;
+                    this._originalImage = value;
                 }
             }
         }
