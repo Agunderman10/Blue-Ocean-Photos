@@ -145,7 +145,7 @@
                     ChosenImage.BeginInit();
                     ChosenImage.UriSource = _chosenImageUri;
                     ChosenImage.EndInit();
-
+                    
                     //set original image equal to our unchanged original image
                     OriginalImage = ChosenImage;
 
