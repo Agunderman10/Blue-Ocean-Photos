@@ -252,6 +252,7 @@
             }
         }
 
+        //allows user to see original unchanged image
         private void ViewOriginalImage()
         {
             //create object of our original image window and show it, passing the image to the class
