@@ -224,6 +224,9 @@
             //set image to null so it doesn't show in the UI anymore
             ChosenImage = null;
 
+            //set original image to null because since we closed the image there is no longer an original image
+            OriginalImage = null;
+
             //set FileName to null so it's not displayed anymore
             FileName = null;
 
