@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BlueOceanPhotos"
         mc:Ignorable="d"
-        Title="ImageWindow" Height="{Binding ImageHeight}" Width="{Binding ImageWidth}">
+        Title="Original Image" Height="{Binding ImageHeight}" Width="{Binding ImageWidth}">
 
     <Image Source="{Binding OriginalImage}"/>
 </Window>
