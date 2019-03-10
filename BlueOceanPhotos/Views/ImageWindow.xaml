@@ -5,9 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BlueOceanPhotos"
         mc:Ignorable="d"
-        Title="Original Image" 
-        Height="{Binding ImageHeight}" 
-        Width="{Binding ImageWidth}">
+        Title="Original Image"
+        WindowStartupLocation="CenterScreen">
 
     <Image Source="{Binding OriginalImage}"/>
 </Window>
