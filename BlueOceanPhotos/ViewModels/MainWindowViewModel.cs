@@ -76,6 +76,11 @@
             get { return new DelegateCommand(SaveImage); }
         }
 
+        public ICommand ViewOriginalCommand
+        {
+            get { return new DelegateCommand(ViewOriginalImage); }
+        }
+
         #endregion
         #region Private Methods
         //creates blank bitmap so user can draw on it
@@ -226,6 +231,12 @@
                 //save encoder's data into file stream
                 encoder.Save(stream);
             }
+        }
+
+        private void ViewOriginalImage()
+        {
+            ImageWindow imageWindow = new ImageWindow(ChosenImage);
+            imageWindow.Show();
         }
         #endregion
         #region INotifyPropertyChanged
