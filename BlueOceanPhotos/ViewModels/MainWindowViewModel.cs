@@ -151,7 +151,7 @@
 
                     //set FileName property to the new image's name so we can display it, get ONLY the name, not full path
                     FileName = Path.GetFileName(openFileDialog.FileName);
-
+                    
                     //reset rotations because we are getting a new image so we don't need to keep track of old image's rotations
                     rotations = 0;
 
