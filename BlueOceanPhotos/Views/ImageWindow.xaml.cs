@@ -23,8 +23,11 @@ namespace BlueOceanPhotos
 
         public ImageWindow(BitmapImage chosenImage)
         {
+            //create object of the View Model and set this data context to it, pass the image so we can display it through
+            //our View Model
             imageWindowViewModel = new ImageWindowViewModel(chosenImage);
             this.DataContext = imageWindowViewModel;
+
             InitializeComponent();
         }
     }

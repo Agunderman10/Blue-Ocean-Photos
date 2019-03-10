@@ -235,6 +235,7 @@
 
         private void ViewOriginalImage()
         {
+            //create object of our original image window and show it, passing the image to the class
             ImageWindow imageWindow = new ImageWindow(ChosenImage);
             imageWindow.Show();
         }
