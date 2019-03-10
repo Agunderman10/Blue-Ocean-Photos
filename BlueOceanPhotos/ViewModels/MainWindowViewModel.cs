@@ -15,6 +15,7 @@
         private BitmapImage _chosenImage;
         private Uri _chosenImageUri;
         private string _fileName;
+        private BitmapImage _originalImage;
         private int rotations = 0;
         #endregion
         #region Constructors
@@ -47,6 +48,18 @@
                 {
                     this._fileName = value;
                     OnPropertyChanged(nameof(FileName));
+                }
+            }
+        }
+
+        public BitmapImage OriginalImage
+        {
+            get { return this._originalImage; }
+            set
+            {
+                if(this._originalImage != value)
+                {
+                    this._originalImage = value;
                 }
             }
         }
@@ -87,13 +100,16 @@
         private void NewImage()
         {
             //create new objects we will set the ChosenImage equal to
-            _chosenImage = new BitmapImage();
+            ChosenImage = new BitmapImage();
             _chosenImageUri = new Uri("Images/Untitled.png", UriKind.Relative);
 
             //set new UriSource to our new image we created above
-            _chosenImage.BeginInit();
-            _chosenImage.UriSource = _chosenImageUri;
-            _chosenImage.EndInit();
+            ChosenImage.BeginInit();
+            ChosenImage.UriSource = _chosenImageUri;
+            ChosenImage.EndInit();
+
+            //set original image equal to our unchanged original image
+            OriginalImage = _chosenImage;
 
             //set filename property to untitled.png so we can display the image name
             FileName = "Untitled.png";
@@ -129,6 +145,9 @@
                     ChosenImage.BeginInit();
                     ChosenImage.UriSource = _chosenImageUri;
                     ChosenImage.EndInit();
+
+                    //set original image equal to our unchanged original image
+                    OriginalImage = ChosenImage;
 
                     //set FileName property to the new image's name so we can display it, get ONLY the name, not full path
                     FileName = Path.GetFileName(openFileDialog.FileName);
@@ -236,7 +255,7 @@
         private void ViewOriginalImage()
         {
             //create object of our original image window and show it, passing the image to the class
-            ImageWindow imageWindow = new ImageWindow(ChosenImage);
+            ImageWindow imageWindow = new ImageWindow(OriginalImage);
             imageWindow.Show();
         }
         #endregion
