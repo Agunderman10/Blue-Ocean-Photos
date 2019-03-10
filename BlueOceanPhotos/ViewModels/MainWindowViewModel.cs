@@ -242,7 +242,7 @@
         private void SaveImage()
         {
             //create filestream object to hold the bitmap
-            using(FileStream stream = new FileStream("Untitled.png", FileMode.Create))
+            using(FileStream stream = new FileStream(FileName, FileMode.Create))
             {
                 //create a PngBitmapEncoder object
                 PngBitmapEncoder encoder = new PngBitmapEncoder();
