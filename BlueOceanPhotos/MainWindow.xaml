@@ -53,8 +53,6 @@
                 <Separator/>
                 <MenuItem Header="View Original Image" Command="{Binding ViewOriginalCommand}"/>
                 <Separator/>
-                <MenuItem Header="View Edited Image"/>
-                <Separator/>
                 <MenuItem Header="View Fullscreen Image"/>
                 <Separator/>
                 <MenuItem Header="View Actual Size"/>
@@ -94,7 +92,6 @@
                         <MenuItem Header="Zoom In" Foreground="White"/>
                         <MenuItem Header="Zoom Out" Foreground="White"/>
                         <MenuItem Header="View Original" Foreground="White" Command="{Binding ViewOriginalCommand}"/>
-                        <MenuItem Header="View Edited" Foreground="White"/>
                         <MenuItem Header="View Fullscreen" Foreground="White"/>
                         <MenuItem Header="Rename" Foreground="White"/>
                         <MenuItem Header="Save" Foreground="White" Command="{Binding SaveImageCommand}"/>
