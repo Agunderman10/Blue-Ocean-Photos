@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace BlueOceanPhotos.Views
+namespace BlueOceanPhotos
 {
     /// <summary>
     /// Interaction logic for RenameWindow.xaml
