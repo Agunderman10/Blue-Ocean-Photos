@@ -19,8 +19,10 @@ namespace BlueOceanPhotos
     /// </summary>
     public partial class RenameWindow : Window
     {
+        RenameWindowViewModel renameWindowViewModel = new RenameWindowViewModel();
         public RenameWindow()
         {
+            this.DataContext = renameWindowViewModel;
             InitializeComponent();
         }
     }
