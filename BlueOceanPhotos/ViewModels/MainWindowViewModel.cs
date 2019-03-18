@@ -94,6 +94,11 @@
             get { return new DelegateCommand(ViewOriginalImage); }
         }
 
+        public ICommand RenameImageCommand
+        {
+            get { return new DelegateCommand(RenameImage); }
+        }
+
         #endregion
         #region Private Methods
         //creates blank bitmap so user can draw on it
@@ -261,6 +266,12 @@
             //create object of our original image window and show it, passing the image to the class
             ImageWindow imageWindow = new ImageWindow(OriginalImage);
             imageWindow.Show();
+        }
+
+        //allows user to rename image
+        private void RenameImage()
+        {
+            
         }
         #endregion
         #region INotifyPropertyChanged

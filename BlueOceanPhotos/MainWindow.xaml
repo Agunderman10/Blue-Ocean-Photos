@@ -29,7 +29,7 @@
                 <Separator/>
                 <MenuItem Header="Recent Images"/>
                 <Separator/>
-                <MenuItem Header="Rename.."/>
+                <MenuItem Header="Rename.." Command="{Binding RenameImageCommand}"/>
                 <Separator/>
                 <MenuItem Header="Save" Command="{Binding SaveImageCommand}"/>
                 <Separator/>
@@ -76,7 +76,7 @@
             </Grid.RowDefinitions>
             
             <StackPanel Grid.ColumnSpan="3">
-                <Label Content="{Binding FileName}" Foreground="White"></Label>
+                <TextBox Text="{Binding FileName}" Foreground="Black" IsEnabled="False"></TextBox>
                 <Image Source="{Binding ChosenImage}" Opacity="1" Margin="10" Grid.ColumnSpan="3" Grid.RowSpan="4"/>
             </StackPanel>
 
@@ -93,7 +93,7 @@
                         <MenuItem Header="Zoom Out" Foreground="White"/>
                         <MenuItem Header="View Original" Foreground="White" Command="{Binding ViewOriginalCommand}"/>
                         <MenuItem Header="View Fullscreen" Foreground="White"/>
-                        <MenuItem Header="Rename" Foreground="White"/>
+                        <MenuItem Header="Rename" Foreground="White" Command="{Binding RenameImageCommand}"/>
                         <MenuItem Header="Save" Foreground="White" Command="{Binding SaveImageCommand}"/>
                         <MenuItem Header="Save As.." Foreground="White"/>
                         <MenuItem Header="Share With.." Foreground="White"/>
