@@ -271,7 +271,8 @@
         //allows user to rename image
         private void RenameImage()
         {
-            
+            FileName = "Random.jpg";
+            OnPropertyChanged(nameof(FileName));
         }
         #endregion
         #region INotifyPropertyChanged
