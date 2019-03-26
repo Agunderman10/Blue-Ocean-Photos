@@ -286,7 +286,9 @@
         private void RenameImage()
         {
             FileName = "Random.jpg";
+            RenameEnabled = true;
             OnPropertyChanged(nameof(FileName));
+            OnPropertyChanged(nameof(RenameEnabled));
         }
         #endregion
         #region INotifyPropertyChanged
