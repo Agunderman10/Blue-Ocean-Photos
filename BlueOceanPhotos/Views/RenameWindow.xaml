@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BlueOceanPhotos"
         mc:Ignorable="d"
-        Title="RenameWindow" Height="250" Width="500">
+        Title="RenameWindow" 
+        Height="250" 
+        Width="500">
 
     <Window.Background>
         <ImageBrush Opacity=".3">
