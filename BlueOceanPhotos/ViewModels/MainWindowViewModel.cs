@@ -99,6 +99,11 @@
             get { return new DelegateCommand(RenameImage); }
         }
 
+        public ICommand ViewFullScreenCommand
+        {
+            get { return new DelegateCommand(ViewFullScreen); }
+        }
+
         #endregion
         #region Public Methods
         public void Rename(string fileName)
@@ -280,6 +285,13 @@
         {
             RenameWindow renameWindow = new RenameWindow(FileName, this);
             renameWindow.Show();
+        }
+
+        //allows user to view the image fullscreen
+        private void ViewFullScreen()
+        {
+            FullScreenWindow fullScreenWindow = new FullScreenWindow();
+            fullScreenWindow.Show();
         }
         #endregion
         #region INotifyPropertyChanged

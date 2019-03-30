@@ -53,7 +53,7 @@
                 <Separator/>
                 <MenuItem Header="View Original Image" Command="{Binding ViewOriginalCommand}"/>
                 <Separator/>
-                <MenuItem Header="View Fullscreen Image"/>
+                <MenuItem Header="View Fullscreen Image" Command="{Binding ViewFullScreenCommand}"/>
                 <Separator/>
                 <MenuItem Header="View Actual Size"/>
                 <Separator/>
@@ -92,7 +92,7 @@
                         <MenuItem Header="Zoom In" Foreground="White"/>
                         <MenuItem Header="Zoom Out" Foreground="White"/>
                         <MenuItem Header="View Original" Foreground="White" Command="{Binding ViewOriginalCommand}"/>
-                        <MenuItem Header="View Fullscreen" Foreground="White"/>
+                        <MenuItem Header="View Fullscreen" Foreground="White" Command="{Binding ViewFullScreenCommand}"/>
                         <MenuItem Header="Rename" Foreground="White" Command="{Binding RenameImageCommand}"/>
                         <MenuItem Header="Save" Foreground="White" Command="{Binding SaveImageCommand}"/>
                         <MenuItem Header="Save As.." Foreground="White"/>
