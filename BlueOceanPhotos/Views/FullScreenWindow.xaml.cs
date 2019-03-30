@@ -8,6 +8,7 @@
     /// </summary>
     public partial class FullScreenWindow : Window
     {
+        //pass the chosen image to the FullScreenWindowViewModel and set DataContext
         public FullScreenWindow(BitmapImage chosenImage)
         {
             FullScreenWindowViewModel fullScreenWindowViewModel = new FullScreenWindowViewModel(chosenImage);
