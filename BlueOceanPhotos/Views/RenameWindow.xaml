@@ -6,6 +6,15 @@
         xmlns:local="clr-namespace:BlueOceanPhotos"
         mc:Ignorable="d"
         Title="RenameWindow" Height="250" Width="500">
+
+    <Window.Background>
+        <ImageBrush Opacity=".3">
+            <ImageBrush.ImageSource>
+                <BitmapImage UriSource="pack://BlueOceanPhotos/Images/BlueOceanSplashScreen.jpg"/>
+            </ImageBrush.ImageSource>
+        </ImageBrush>
+    </Window.Background>
+    
     <Grid>
         
     </Grid>
