@@ -24,6 +24,8 @@ namespace BlueOceanPhotos
         public FullScreenWindow(BitmapImage chosenImage)
         {
             this._chosenImage = chosenImage;
+            FullScreenWindowViewModel fullScreenWindowViewModel = new FullScreenWindowViewModel();
+            this.DataContext = fullScreenWindowViewModel;
             InitializeComponent();
         }
     }
