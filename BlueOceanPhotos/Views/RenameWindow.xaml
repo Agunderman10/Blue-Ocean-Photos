@@ -19,6 +19,19 @@
     </Window.Background>
     
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Current Name:" FontWeight="Bold" TextAlignment="Right" VerticalAlignment="Center" Padding="0 0 10 0" FontSize="25" Foreground="White"/>
+        <TextBlock Text="" Grid.Column="1" Grid.Row="0" Background="White" Margin="10 45 30 40"/>
+
+        <TextBlock Text="New Name:" FontWeight="Bold" TextAlignment="Right" VerticalAlignment="Center" Padding="0 0 10 0" FontSize="25" Grid.Row="1" Foreground="White"/>
+        <TextBox Text="" Grid.Column="1" Grid.Row="1" Background="White" Margin="10 45 30 40"/>
     </Grid>
 </Window>
