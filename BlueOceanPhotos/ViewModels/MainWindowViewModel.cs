@@ -254,7 +254,7 @@
             OnPropertyChanged(nameof(ChosenImage));
             OnPropertyChanged(nameof(FileName));
         }
-
+        
         //save current image
         private void SaveImage()
         {
