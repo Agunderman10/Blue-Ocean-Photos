@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:BlueOceanPhotos"
         mc:Ignorable="d"
         Title="Rename Image" 
-        Height="250" 
-        Width="550"
+        Height="150" 
+        Width="400"
         WindowStartupLocation="CenterScreen">
 
     <Window.Background>
@@ -22,19 +22,15 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Current Name:" FontWeight="Bold" TextAlignment="Right" VerticalAlignment="Center" Padding="0 0 10 0" FontSize="25" Foreground="White"/>
-        <TextBlock Text="" Grid.Column="1" Grid.Row="0" Background="White" Margin="10 30 30 20"/>
+        <TextBlock Text="Name:" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Padding="0 0 10 0" FontSize="25" Grid.Row="0" Foreground="White"/>
+        <TextBox Text="{Binding FileName}" Grid.Column="1" Grid.Row="0" Background="White" Margin="-50 20 30 15"/>
 
-        <TextBlock Text="New Name:" FontWeight="Bold" TextAlignment="Right" VerticalAlignment="Center" Padding="0 0 10 0" FontSize="25" Grid.Row="1" Foreground="White"/>
-        <TextBox Text="" Grid.Column="1" Grid.Row="1" Background="White" Margin="10 30 30 20"/>
-
-        <Button Content="Rename" FontWeight="Bold" Grid.Row="2" Grid.Column="1" Background="Firebrick" Margin="80 20 80 30"/>
+        <Button Content="Rename" FontWeight="Bold" Grid.Row="2" Grid.Column="1" Background="Firebrick" Margin="70 20 70 15"/>
     </Grid>
 </Window>
