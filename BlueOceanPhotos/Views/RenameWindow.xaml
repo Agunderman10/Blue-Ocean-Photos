@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="RenameWindow" 
         Height="250" 
-        Width="500"
+        Width="550"
         WindowStartupLocation="CenterScreen">
 
     <Window.Background>
@@ -22,6 +22,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -29,9 +30,11 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Text="Current Name:" FontWeight="Bold" TextAlignment="Right" VerticalAlignment="Center" Padding="0 0 10 0" FontSize="25" Foreground="White"/>
-        <TextBlock Text="" Grid.Column="1" Grid.Row="0" Background="White" Margin="10 45 30 40"/>
+        <TextBlock Text="" Grid.Column="1" Grid.Row="0" Background="White" Margin="10 30 30 20"/>
 
         <TextBlock Text="New Name:" FontWeight="Bold" TextAlignment="Right" VerticalAlignment="Center" Padding="0 0 10 0" FontSize="25" Grid.Row="1" Foreground="White"/>
-        <TextBox Text="" Grid.Column="1" Grid.Row="1" Background="White" Margin="10 45 30 40"/>
+        <TextBox Text="" Grid.Column="1" Grid.Row="1" Background="White" Margin="10 30 30 20"/>
+
+        <Button Content="Rename" FontWeight="Bold" Grid.Row="2" Grid.Column="1" Background="Firebrick" Margin="80 20 80 30"/>
     </Grid>
 </Window>
