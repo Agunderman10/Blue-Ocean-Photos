@@ -76,7 +76,7 @@
             </Grid.RowDefinitions>
             
             <StackPanel Grid.ColumnSpan="3">
-                <TextBox Text="{Binding FileName}" Foreground="Black" IsEnabled="{Binding RenameEnabled}"></TextBox>
+                <Label Content="{Binding FileName}" Foreground="White"></Label>
                 <Image Source="{Binding ChosenImage}" Opacity="1" Margin="10" Grid.ColumnSpan="3" Grid.RowSpan="4"/>
             </StackPanel>
 

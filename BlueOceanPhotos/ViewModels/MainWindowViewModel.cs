@@ -16,7 +16,6 @@
         private Uri _chosenImageUri;
         private string _fileName;
         private BitmapImage _originalImage;
-        private bool _renameEnabled = false;
         private int rotations = 0;
         #endregion
         #region Constructors
@@ -61,19 +60,6 @@
                 if(this._originalImage != value)
                 {
                     this._originalImage = value;
-                }
-            }
-        }
-
-        public bool RenameEnabled
-        {
-            get { return this._renameEnabled; }
-            set
-            {
-                if(this._renameEnabled != value)
-                {
-                    this._renameEnabled = value;
-                    OnPropertyChanged(nameof(RenameEnabled));
                 }
             }
         }
@@ -285,10 +271,7 @@
         //allows user to rename image
         private void RenameImage()
         {
-            FileName = "Random.jpg";
-            RenameEnabled = true;
-            OnPropertyChanged(nameof(FileName));
-            OnPropertyChanged(nameof(RenameEnabled));
+            
         }
         #endregion
         #region INotifyPropertyChanged
