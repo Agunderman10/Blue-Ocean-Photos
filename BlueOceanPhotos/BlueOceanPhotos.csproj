@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\FullScreenWindowViewModel.cs" />
     <Compile Include="ViewModels\ImageWindowViewModel.cs" />
     <Compile Include="ViewModels\RenameWindowViewModel.cs" />
     <Compile Include="Views\FullScreenWindow.xaml.cs">
