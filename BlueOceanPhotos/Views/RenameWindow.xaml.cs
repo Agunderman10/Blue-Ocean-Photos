@@ -7,15 +7,11 @@
     /// </summary>
     public partial class RenameWindow : Window
     {
-        private string _fileName;
-        private MainWindowViewModel _mainWindowViewModel;
-
         public RenameWindow(string fileName, MainWindowViewModel mainWindowViewModel)
         {
-            this._fileName = fileName;
-            this._mainWindowViewModel = mainWindowViewModel;
-            RenameWindowViewModel _renameWindowViewModel = new RenameWindowViewModel(_fileName, _mainWindowViewModel, this);
+            RenameWindowViewModel _renameWindowViewModel = new RenameWindowViewModel(fileName, mainWindowViewModel, this);
             this.DataContext = _renameWindowViewModel;
+
             InitializeComponent();
         }
     }

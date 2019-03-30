@@ -12,6 +12,7 @@
         {
             FullScreenWindowViewModel fullScreenWindowViewModel = new FullScreenWindowViewModel(chosenImage);
             this.DataContext = fullScreenWindowViewModel;
+
             InitializeComponent();
         }
     }
