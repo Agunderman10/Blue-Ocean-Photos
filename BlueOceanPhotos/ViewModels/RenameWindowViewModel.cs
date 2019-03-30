@@ -32,6 +32,7 @@
             get { return new DelegateCommand(Rename); }
         }
 
+        //renames image depending on what user inputs as new name and closes rename window
         private void Rename()
         {
             this._mainWindowViewModel.Rename(FileName);
