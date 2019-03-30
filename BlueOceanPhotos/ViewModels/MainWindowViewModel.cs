@@ -290,7 +290,7 @@
         //allows user to view the image fullscreen
         private void ViewFullScreen()
         {
-            FullScreenWindow fullScreenWindow = new FullScreenWindow();
+            FullScreenWindow fullScreenWindow = new FullScreenWindow(ChosenImage);
             fullScreenWindow.Show();
         }
         #endregion

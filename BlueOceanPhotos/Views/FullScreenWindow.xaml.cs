@@ -19,8 +19,11 @@ namespace BlueOceanPhotos
     /// </summary>
     public partial class FullScreenWindow : Window
     {
-        public FullScreenWindow()
+        private BitmapImage _chosenImage;
+
+        public FullScreenWindow(BitmapImage chosenImage)
         {
+            this._chosenImage = chosenImage;
             InitializeComponent();
         }
     }
