@@ -31,6 +31,6 @@
         <TextBlock Text="Name:" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Padding="0 0 10 0" FontSize="25" Grid.Row="0" Foreground="White"/>
         <TextBox Text="{Binding FileName}" Grid.Column="1" Grid.Row="0" Background="White" Margin="-50 20 30 15"/>
 
-        <Button Content="Rename" FontWeight="Bold" Grid.Row="2" Grid.Column="1" Background="Firebrick" Margin="70 20 70 15"/>
+        <Button Command="{Binding RenameCommand}" Content="Rename" FontWeight="Bold" Grid.Row="2" Grid.Column="1" Background="Firebrick" Margin="70 20 70 15"/>
     </Grid>
 </Window>

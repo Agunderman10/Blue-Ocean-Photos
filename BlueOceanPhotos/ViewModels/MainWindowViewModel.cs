@@ -100,6 +100,13 @@
         }
 
         #endregion
+        #region Public Methods
+        public void Rename(string fileName)
+        {
+            this.FileName = fileName;
+            OnPropertyChanged(nameof(FileName));
+        }
+        #endregion
         #region Private Methods
         //creates blank bitmap so user can draw on it
         private void NewImage()
@@ -271,7 +278,7 @@
         //allows user to rename image
         private void RenameImage()
         {
-            RenameWindow renameWindow = new RenameWindow(FileName);
+            RenameWindow renameWindow = new RenameWindow(FileName, this);
             renameWindow.Show();
         }
         #endregion
