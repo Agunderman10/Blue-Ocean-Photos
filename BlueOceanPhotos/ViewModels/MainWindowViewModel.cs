@@ -271,7 +271,8 @@
         //allows user to rename image
         private void RenameImage()
         {
-            
+            RenameWindow renameWindow = new RenameWindow();
+            renameWindow.Show();
         }
         #endregion
         #region INotifyPropertyChanged
