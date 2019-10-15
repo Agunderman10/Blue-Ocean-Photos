@@ -243,6 +243,13 @@
         //close whatever image is currently open, basically just set it to null
         private void CloseImage()
         {
+            //if the user doesn't have a chosen image then we can't close an image
+            if(ChosenImage == null || FileName == null)
+            {
+                MessageBox.Show("You don't have any image open.", "Notice", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             if(imageIsSaved == false)
             {
                 //notify user that they are closing the image without saving it
