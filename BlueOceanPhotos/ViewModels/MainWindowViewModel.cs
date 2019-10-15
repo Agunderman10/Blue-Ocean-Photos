@@ -17,6 +17,7 @@
         private string _fileName;
         private BitmapImage _originalImage;
         private int rotations = 0;
+        private bool imageIsSaved = false;
         #endregion
         #region Constructors
         public MainWindowViewModel()
@@ -109,6 +110,7 @@
         public void Rename(string fileName)
         {
             this.FileName = fileName;
+            imageIsSaved = false;
             OnPropertyChanged(nameof(FileName));
         }
         #endregion
@@ -193,6 +195,9 @@
             {
                 rotations = 1;
             }
+            
+            //set image is saved to false because we rotated it and it therefore isn't saved anymore
+            imageIsSaved = false;
 
             //switch through rotations
             switch (rotations)
@@ -238,21 +243,32 @@
         //close whatever image is currently open, basically just set it to null
         private void CloseImage()
         {
-            //set image to null so it doesn't show in the UI anymore
-            ChosenImage = null;
+            if(imageIsSaved == false)
+            {
+                //notify user that they are closing the image without saving it
+                var userChoice = MessageBox.Show("Do you want to close the image without saving?", "Notice", 
+                    MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
-            //set original image to null because since we closed the image there is no longer an original image
-            OriginalImage = null;
+                //if the user wants to close the image without saving it, do so
+                if(userChoice == MessageBoxResult.Yes)
+                {
+                    //set image to null so it doesn't show in the UI anymore
+                    ChosenImage = null;
 
-            //set FileName to null so it's not displayed anymore
-            FileName = null;
+                    //set original image to null because since we closed the image there is no longer an original image
+                    OriginalImage = null;
 
-            //reset rotations because we are closing our image so we don't need to keep track of its rotations
-            rotations = 0;
+                    //set FileName to null so it's not displayed anymore
+                    FileName = null;
 
-            //update UI
-            OnPropertyChanged(nameof(ChosenImage));
-            OnPropertyChanged(nameof(FileName));
+                    //reset rotations because we are closing our image so we don't need to keep track of its rotations
+                    rotations = 0;
+
+                    //update UI
+                    OnPropertyChanged(nameof(ChosenImage));
+                    OnPropertyChanged(nameof(FileName));
+                }
+            }
         }
         
         //save current image
@@ -270,6 +286,9 @@
                 //save encoder's data into file stream
                 encoder.Save(stream);
             }
+
+            //we saved the image so set issaved to true
+            imageIsSaved = true;
         }
 
         //allows user to see original unchanged image
@@ -285,6 +304,7 @@
         {
             RenameWindow renameWindow = new RenameWindow(FileName, this);
             renameWindow.Show();
+            imageIsSaved = false;
         }
 
         //allows user to view the image fullscreen
