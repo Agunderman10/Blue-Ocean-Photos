@@ -8,6 +8,8 @@
     using System.Windows;
     using Microsoft.Win32;
     using System.IO;
+    using System.Collections.Generic;
+    using System.Collections;
 
     public class MainWindowViewModel : INotifyPropertyChanged
     {
@@ -36,6 +38,18 @@
                 {
                     this._chosenImage = value;
                     OnPropertyChanged(nameof(ChosenImage));
+                }
+            }
+        }
+
+        public Uri ChosenImageUri
+        {
+            get { return this._chosenImageUri; }
+            set
+            {
+                if(this._chosenImageUri != value)
+                {
+                    this._chosenImageUri = value;
                 }
             }
         }
@@ -85,6 +99,16 @@
             get { return new DelegateCommand(CloseImage); }
         }
 
+        public ICommand UndoAction
+        {
+            get { return new DelegateCommand(Undo); }
+        }
+
+        public ICommand RedoAction
+        {
+            get { return new DelegateCommand(Redo); }
+        }
+
         public ICommand SaveImageCommand
         {
             get { return new DelegateCommand(SaveImage); }
@@ -111,6 +135,8 @@
         {
             this.FileName = fileName;
             imageIsSaved = false;
+
+            // update UI
             OnPropertyChanged(nameof(FileName));
         }
         #endregion
@@ -120,16 +146,16 @@
         {
             //create new objects we will set the ChosenImage equal to
             ChosenImage = new BitmapImage();
-            _chosenImageUri = new Uri("Images/Untitled.png", UriKind.Relative);
+            ChosenImageUri = new Uri("Images/Untitled.png", UriKind.Relative);
 
             //set new UriSource to our new image we created above
             ChosenImage.BeginInit();
-            ChosenImage.UriSource = _chosenImageUri;
+            ChosenImage.UriSource = ChosenImageUri;
             ChosenImage.EndInit();
 
             //set original image equal to our unchanged original image
-            OriginalImage = _chosenImage;
-
+            OriginalImage = ChosenImage;
+            
             //set filename property to untitled.png so we can display the image name
             FileName = "Untitled.png";
 
@@ -204,35 +230,35 @@
             {
                 //rotate to 90 degrees
                 case 1:
-                    _chosenImage = new BitmapImage();
-                    _chosenImage.BeginInit();
-                    _chosenImage.Rotation = Rotation.Rotate90;
-                    _chosenImage.UriSource = _chosenImageUri;
-                    _chosenImage.EndInit();
+                    ChosenImage = new BitmapImage();
+                    ChosenImage.BeginInit();
+                    ChosenImage.Rotation = Rotation.Rotate90;
+                    ChosenImage.UriSource = ChosenImageUri;
+                    ChosenImage.EndInit();
                     break;
                 //rotate to 180 degrees
                 case 2:
-                    _chosenImage = new BitmapImage();
-                    _chosenImage.BeginInit();
-                    _chosenImage.Rotation = Rotation.Rotate180;
-                    _chosenImage.UriSource = _chosenImageUri;
-                    _chosenImage.EndInit();
+                    ChosenImage = new BitmapImage();
+                    ChosenImage.BeginInit();
+                    ChosenImage.Rotation = Rotation.Rotate180;
+                    ChosenImage.UriSource = ChosenImageUri;
+                    ChosenImage.EndInit();
                     break;
                 //rotate to 270 degrees
                 case 3:
-                    _chosenImage = new BitmapImage();
-                    _chosenImage.BeginInit();
-                    _chosenImage.Rotation = Rotation.Rotate270;
-                    _chosenImage.UriSource = _chosenImageUri;
-                    _chosenImage.EndInit();
+                    ChosenImage = new BitmapImage();
+                    ChosenImage.BeginInit();
+                    ChosenImage.Rotation = Rotation.Rotate270;
+                    ChosenImage.UriSource = ChosenImageUri;
+                    ChosenImage.EndInit();
                     break;
                 //rotate back to 0 degrees
                 case 4:
-                    _chosenImage = new BitmapImage();
-                    _chosenImage.BeginInit();
-                    _chosenImage.Rotation = Rotation.Rotate0;
-                    _chosenImage.UriSource = _chosenImageUri;
-                    _chosenImage.EndInit();
+                    ChosenImage = new BitmapImage();
+                    ChosenImage.BeginInit();
+                    ChosenImage.Rotation = Rotation.Rotate0;
+                    ChosenImage.UriSource = ChosenImageUri;
+                    ChosenImage.EndInit();
                     break;
             }
 
@@ -276,6 +302,18 @@
                     OnPropertyChanged(nameof(FileName));
                 }
             }
+        }
+
+        // undo last action
+        private void Undo()
+        { 
+
+        }
+
+        // redo last action
+        private void Redo()
+        {
+
         }
         
         //save current image

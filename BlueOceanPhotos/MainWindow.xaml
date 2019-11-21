@@ -44,6 +44,10 @@
                 <Separator/>
                 <MenuItem Header="Rotate Image" Command="{Binding RotateImageCommand}"/>
                 <Separator/>
+                <MenuItem Header="Undo" Command="{Binding UndoAction}"/>
+                <Separator/>
+                <MenuItem Header="Redo" Command="{Binding RedoAction}"/>
+                <Separator/>
                 <MenuItem Header="Zoom In"/>
                 <Separator/>
                 <MenuItem Header="Zoom Out"/>
@@ -87,6 +91,8 @@
                         <MenuItem Header="New Image" Foreground="White" Command="{Binding NewImageCommand}"/>
                         <MenuItem Header="Open Image" Foreground="White" Command="{Binding OpenImageCommand}"/>
                         <MenuItem Header="Close Image" Foreground="White" Command="{Binding CloseImageCommand}"/>
+                        <MenuItem Header="Undo" Foreground="White" Command="{Binding UndoAction}"/>
+                        <MenuItem Header="Redo" Foreground="White" Command="{Binding RedoAction}"/>
                         <MenuItem Header="Crop Image" Foreground="White"/>
                         <MenuItem Header="Rotate Image" Foreground="White" Command="{Binding RotateImageCommand}"/>
                         <MenuItem Header="Zoom In" Foreground="White"/>
